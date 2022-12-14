@@ -1,8 +1,8 @@
 package com.heroslender.compose.components
 
-import PluginCard
+import com.heroslender.compose.style.PluginCard
 import androidx.compose.runtime.Composable
-import com.huanshankeji.compose.web.material.MdcCard
+import org.jetbrains.compose.web.css.padding
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.css.width
@@ -13,22 +13,24 @@ import org.jetbrains.compose.web.dom.Text
 
 @Composable
 fun PluginCard(plugin: PluginStats) {
-    MdcCard(padding = 12.px, attrs = { classes(PluginCard.card) }) {
-        P({ classes("title-medium", "on-surface-text") }) {
-            Text(plugin.pluginName)
+    Div({ classes("col") }) {
+        Div({ style { padding(12.px) }; classes(PluginCard.card) }) {
+            P({ classes("title-medium", "on-surface-text") }) {
+                Text(plugin.pluginName)
+            }
+
+            ProgressBarStats(
+                icon = "server",
+                statsName = "Servers",
+                stats = plugin.serversStats
+            )
+
+            ProgressBarStats(
+                icon = "players",
+                statsName = "Players",
+                stats = plugin.playerStats
+            )
         }
-
-        ProgressBarStats(
-            icon = "server",
-            statsName = "Servers",
-            stats = plugin.serversStats
-        )
-
-        ProgressBarStats(
-            icon = "players",
-            statsName = "Players",
-            stats = plugin.playerStats
-        )
     }
 }
 

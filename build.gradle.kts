@@ -34,7 +34,8 @@ kotlin {
                 implementation(compose.web.core)
                 implementation(compose.runtime)
 
-                implementation("com.huanshankeji:compose-web-material:0.1.0-compose-1.1.1")
+                implementation(npm("bootstrap", "^5.2.3"))
+                implementation(devNpm("@popperjs/core", "^2.11.6"))
 
                 implementation(devNpm("style-loader", "^3.3.1"))
                 implementation(devNpm("file-loader", "^6.2.0"))

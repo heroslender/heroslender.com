@@ -1,4 +1,5 @@
-import com.heroslender.compose.style.AppStylesheet
+package com.heroslender.compose.style
+
 import org.jetbrains.compose.web.ExperimentalComposeWebApi
 import org.jetbrains.compose.web.css.*
 
@@ -11,8 +12,6 @@ object PluginCard : StyleSheet(AppStylesheet) {
 
     val card by style {
         backgroundColor(CSSStyleVariable<CSSColorValue>("md-sys-color-surface-1").value())
-
-        marginBottom(15.px)
     }
 
     @OptIn(ExperimentalComposeWebApi::class)
@@ -61,7 +60,7 @@ object PluginCard : StyleSheet(AppStylesheet) {
             self + after style {
                 fontFamily("Line Awesome Brands", "Line Awesome Free")
                 fontSize(16.px)
-                color(com.heroslender.compose.style.Color(0xFFffd147))
+                color(Color(0xFFffd147))
                 position(Position.Absolute)
                 top((-2).px)
                 left(2.px)

@@ -8,5 +8,9 @@ object AppStylesheet : StyleSheet() {
         universal style {
             fontFamily("Roboto")
         }
+
+        type("a") style {
+            textDecoration("none")
+        }
     }
 }
