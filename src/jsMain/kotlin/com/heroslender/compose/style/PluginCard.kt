@@ -12,7 +12,6 @@ object PluginCard : StyleSheet(AppStylesheet) {
     val card by style {
         backgroundColor(CSSStyleVariable<CSSColorValue>("md-sys-color-surface-1").value())
 
-        self + not(lastChild)
         marginBottom(15.px)
     }
 
@@ -44,7 +43,6 @@ object PluginCard : StyleSheet(AppStylesheet) {
                 }
 
                 backgroundImage("linear-gradient(to right, #ffd147, #ffeaab)")
-//                backgroundSize("24em 0.25em")
                 height(.25.em)
                 position(Position.Absolute)
             }
