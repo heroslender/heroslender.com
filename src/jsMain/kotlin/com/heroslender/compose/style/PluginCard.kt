@@ -1,5 +1,6 @@
 package com.heroslender.compose.style
 
+import com.heroslender.compose.utils.hexColor
 import org.jetbrains.compose.web.ExperimentalComposeWebApi
 import org.jetbrains.compose.web.css.*
 
@@ -11,7 +12,7 @@ object PluginCard : StyleSheet(AppStylesheet) {
     }
 
     val card by style {
-        backgroundColor(CSSStyleVariable<CSSColorValue>("md-sys-color-surface-1").value())
+        backgroundColor(AppThemeColors.surface1.value())
     }
 
     @OptIn(ExperimentalComposeWebApi::class)
@@ -32,7 +33,7 @@ object PluginCard : StyleSheet(AppStylesheet) {
         className("progress") style {
             marginLeft(20.px)
             height(.25.em)
-            backgroundColor(CSSStyleVariable<CSSColorValue>("md-sys-color-background").value())
+            backgroundColor(AppThemeColors.background.value())
             position(Position.Relative)
 
             type("span") style {
@@ -53,17 +54,17 @@ object PluginCard : StyleSheet(AppStylesheet) {
             width(20.px)
             height(11.55.px)
             margin(5.77.px, 0.px, 5.77.px, 0.px)
-            backgroundColor(CSSStyleVariable<CSSColorValue>("md-sys-color-background").value())
+            backgroundColor(AppThemeColors.background.value())
             property("border-left", "solid 1px #333333")
             property("border-right", "solid 1px #333333")
 
             self + after style {
                 fontFamily("Line Awesome Brands", "Line Awesome Free")
                 fontSize(16.px)
-                color(Color(0xFFffd147))
+                color(AppThemeColors.accent.value())
                 position(Position.Absolute)
-                top((-2).px)
-                left(2.px)
+                top((-6).px)
+                left(1.px)
                 property("z-index", "2")
             }
 
